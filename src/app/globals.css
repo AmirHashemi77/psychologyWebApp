@@ -2,20 +2,18 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
   direction: rtl;
 }
 
-/* .bg-hero {
-  background: url("/images/Hero/Cozy\ Counseling\ Space\ with\ Milad\ Tower\ View.png");
+.bg-hero {
+  background: url("/images/Hero/Untitled-1.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
-} */
+  background-size: cover;
+}
 
 @theme {
   --color-border: oklch(90% 0 0 / 0.1);

@@ -1,0 +1,89 @@
+/* متغیرهای SCSS به مقادیر ثابت تبدیل شده‌اند */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3a230e; /* رنگ پایه جدید */
+  background-image: radial-gradient(circle at top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  animation: bg 10s ease infinite alternate;
+  z-index: 0;
+}
+
+.bound {
+  width: 700px;
+  border: solid 1px black;
+  position: absolute;
+  aspect-ratio: 1 / 1;
+  display: none;
+}
+
+.main_spinner {
+  animation: spin 10s linear infinite;
+  width: 150px;
+  position: relative;
+}
+
+.main_spinner .dot {
+  animation: backspin 10s linear infinite;
+  position: absolute;
+  border-radius: 100px;
+  height: 50px;
+  width: 50px;
+  box-shadow: 0 112px white, 0 -112px white, 112px 0 white, -112px 0 white;
+}
+
+.main_spinner .dot_1 {
+  left: 0;
+}
+
+.main_spinner .dot_2 {
+  right: 0;
+}
+
+.main_spinner .center_mass {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 50%;
+  top: 50%;
+  margin-top: -12.5px;
+  margin-left: -12.5px;
+  background: rgba(170, 104, 42, 1); /* small-dot-color */
+  border-radius: 25px;
+  box-shadow: 100px 0 rgba(58, 35, 14, 0.6), -100px 0 rgba(58, 35, 14, 0.6);
+}
+
+/* انیمیشن‌ها */
+@keyframes bg {
+  from {
+    background-color: #2f1c0c; /* darken(#3a230e, 5%) */
+  }
+  to {
+    background-color: #3a230e;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.9);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes backspin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(-180deg) scale(0.9);
+  }
+  100% {
+    transform: rotate(-360deg) scale(1);
+  }
+}
