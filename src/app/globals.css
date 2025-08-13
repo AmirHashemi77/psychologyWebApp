@@ -7,12 +7,13 @@
 html {
   direction: rtl;
 }
+body {
+  background-color: #120b04;
+}
 
 .bg-hero {
-  background: url("/images/Hero/Untitled-1.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #120b04;
+  background: radial-gradient(circle, rgba(18, 11, 4, 1) 21%, rgba(27, 16, 5, 1) 75%, rgba(32, 19, 5, 1) 91%, rgba(38, 22, 6, 1) 100%);
 }
 
 @theme {
