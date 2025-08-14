@@ -8,7 +8,8 @@ html {
   direction: rtl;
 }
 body {
-  background-color: #120b04;
+  background: #120b04;
+  background: radial-gradient(circle, rgba(18, 11, 4, 1) 21%, rgba(27, 16, 5, 1) 75%, rgba(32, 19, 5, 1) 91%, rgba(38, 22, 6, 1) 100%);
 }
 
 .bg-hero {
