@@ -22,11 +22,8 @@ body {
   --color-input: oklch(90% 0 0 / 0.1);
   --color-ring: oklch(90% 0 0 / 0.1);
 
-  --color-background: #3a230e;
-  --color-foreground: oklch(25% 0 0);
-
-  --color-primary: oklch(25% 0 0);
-  --color-primary-foreground: oklch(95% 0 0);
+  --color-primary: #120b04;
+  --color-primary-foreground: #fbefd8;
 
   --color-secondary: oklch(95% 0 0);
   --color-secondary-foreground: oklch(25% 0 0);
@@ -35,7 +32,7 @@ body {
   --color-destructive-foreground: oklch(95% 0 0);
 
   --color-muted: oklch(95% 0 0);
-  --color-muted-foreground: oklch(60% 0 0);
+  --color-muted-foreground: #fbefd8ce;
 
   --color-accent: oklch(95% 0 0);
   --color-accent-foreground: oklch(25% 0 0);
@@ -45,32 +42,6 @@ body {
 
   --color-card: 0% 0% 100%;
   --color-card-foreground: oklch(25% 0 0);
-}
-
-@theme dark {
-  --color-background: oklch(25% 0 0);
-  --color-foreground: oklch(95% 0 0);
-
-  --color-primary: oklch(95% 0 0);
-  --color-primary-foreground: oklch(25% 0 0);
-
-  --color-secondary: oklch(25% 0 0);
-  --color-secondary-foreground: oklch(95% 0 0);
-
-  --color-destructive: oklch(60% 0.15 25);
-  --color-destructive-foreground: oklch(95% 0 0);
-
-  --color-muted: oklch(25% 0 0);
-  --color-muted-foreground: oklch(60% 0 0);
-
-  --color-accent: oklch(25% 0 0);
-  --color-accent-foreground: oklch(95% 0 0);
-
-  --color-popover: oklch(25% 0 0);
-  --color-popover-foreground: oklch(95% 0 0);
-
-  --color-card: oklch(25% 0 0);
-  --color-card-foreground: oklch(95% 0 0);
 }
 
 @font-face {
