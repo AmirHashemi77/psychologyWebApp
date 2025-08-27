@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FC } from "react";
 import { FaFacebook, FaInstagram, FaTelegram, FaWhatsapp } from "react-icons/fa";
+import FooterLogo from "./FooterLogo";
 
 const Footer: FC = () => {
   return (
@@ -9,7 +10,7 @@ const Footer: FC = () => {
         <div className="flex flex-col gap-28 md:gap-10 md:flex-row w-full items-center justify-between">
           <div className="flex flex-col md:flex-row items-center gap-32">
             <Link className="font-extrabold text-5xl text-primary-foreground" href="/">
-              LOGO
+              <FooterLogo />
             </Link>
             <div className="flex flex-col gap-2">
               <p className="text-primary-foreground text-3xl font-semibold font-vazir">دسترسی ها</p>

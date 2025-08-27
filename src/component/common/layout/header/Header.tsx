@@ -4,6 +4,7 @@ import { FC, useState } from "react";
 import { BiSolidLogIn } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Sidebar from "../../sidebar/Sidebar";
+import HeaderLogo from "./HeaderLogo";
 
 const navBarArr = [
   {
@@ -38,7 +39,8 @@ const Header: FC = () => {
   return (
     <header className="flex items-center justify-center fixed top-0 right-0 bg-black/60 z-50 w-full h-14 px-5">
       <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
-        <h1 className="hidden lg:block text-primary-foreground font-bold">LOGO</h1>
+        {/* <h1 className="hidden lg:block text-primary-foreground font-bold">LOGO</h1> */}
+        <HeaderLogo />
         <ul className="hidden lg:flex items-center gap-5">
           {navBarArr.map((item) => (
             <li className="text-primary-foreground text-md  font-vazir" key={item.url}>
