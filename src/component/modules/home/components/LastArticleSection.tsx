@@ -1,4 +1,5 @@
 import Card from "@/component/common/Card/Card";
+import CardSlider from "@/component/common/cardSlider/CardSlider";
 import { FC } from "react";
 
 const DUMMY_DATA = [
@@ -49,11 +50,13 @@ const LastArticleSection: FC = () => {
     <div className="main-container">
       <div className="section-container">
         <h4 className="title">آخرین مقالات</h4>
-        <div className="flex flex-row items-center justify-between flex-wrap gap-10">
+        {/* <div className="flex flex-row items-center justify-between flex-wrap gap-10"> */}
+        <CardSlider>
           {DUMMY_DATA.map((item) => {
             return <Card id={item.id} image={item.image} title={item.title} decription={item.description} subTitle={item.subtitle} tag={item.tag} key={item.id} />;
           })}
-        </div>
+        </CardSlider>
+        {/* </div> */}
       </div>
     </div>
   );

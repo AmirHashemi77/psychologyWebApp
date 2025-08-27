@@ -130,3 +130,17 @@ body {
     @apply text-primary-foreground text-center text-xl md:text-2xl lg:text-4xl font-vazir font-bold;
   }
 }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* برای IE و Edge */
+  scrollbar-width: none; /* برای Firefox */
+}
+
+.img-flip {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}

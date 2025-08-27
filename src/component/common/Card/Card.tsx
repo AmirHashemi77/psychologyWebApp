@@ -13,7 +13,7 @@ interface PropsType {
 
 const Card: FC<PropsType> = ({ id, image, title, subTitle, decription, tag }) => {
   return (
-    <div className="flex flex-col items-center justify-between rounded-xl bg-hero w-full lg:w-[40%] h-[600px] shadow-2xl shadow-black">
+    <div className="flex flex-col items-center justify-between rounded-xl bg-hero w-full lg:w-[40%] h-[800px] md:h-[650px] shadow-2xl shadow-black flex-shrink-0">
       <div className="relative w-full h-[50%] overflow-hidden">
         <Image alt={tag} src={image} fill className="rounded-xl hover:scale-110 transition-all duration-300" objectFit="cover" objectPosition="center" />
       </div>
