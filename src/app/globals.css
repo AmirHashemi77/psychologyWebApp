@@ -127,7 +127,7 @@ body {
     @apply flex flex-col items-start gap-5 my-10;
   }
   .title {
-    @apply text-primary-foreground text-center text-xl md:text-2xl lg:text-4xl font-vazir font-bold;
+    @apply text-primary-foreground text-center text-xl md:text-2xl lg:text-4xl font-vazir font-bold mb-16;
   }
 }
 .no-scrollbar::-webkit-scrollbar {
