@@ -30,7 +30,7 @@ const AboutUsSection: FC = () => {
       <div className="section-container">
         <h4 className="title">درباره ما</h4>
         <div className="flex flex-col-reverse md:flex-row justify-between gap-6 w-full h-screen">
-          <div className="flex flex-col items-start gap-5 w-1/2 p-5 h-full overflow-y-auto no-scrollbar">
+          <div className="flex flex-col items-start gap-5 w-full xl:w-1/2 p-5 h-full overflow-y-auto no-scrollbar">
             <h5 className="text-primary-foreground text-center text-base md:text-xl lg:text-2xl font-vazir font-semibold my-5 ">مرضیه خمسه</h5>
 
             <p className="text-primary-foreground text-right font-bold  py-5 font-vazir leading-11">
@@ -65,7 +65,7 @@ const AboutUsSection: FC = () => {
             </div>
           </div>
           <div className="relative w-full xl:w-1/2 h-full rounded-2xl bg-hero p-5">
-            <Image fill objectFit="cover" alt="hero-img" src="/images/ChatGPT Image Sep 1, 2025, 12_50_04 PM.png" className="rounded-2xl " />
+            <Image fill objectFit="cover" objectPosition="center" alt="hero-img" src="/images/ChatGPT Image Sep 1, 2025, 12_50_04 PM.png" className="rounded-2xl " />
           </div>
         </div>
       </div>

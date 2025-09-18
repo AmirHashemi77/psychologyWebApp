@@ -1,4 +1,4 @@
-import Card from "@/component/common/Card/Card";
+import Card from "@/component/common/card/Card";
 import CardSlider from "@/component/common/cardSlider/CardSlider";
 import { FC } from "react";
 

@@ -17,7 +17,7 @@ export default function CardSlider({ children }: { children: ReactNode }) {
   const scroll = (dir: "left" | "right") => {
     const el = containerRef.current;
     if (!el) return;
-    const scrollAmount = el.clientWidth * 0.8; // مقدار اسکرول
+    const scrollAmount = el.clientWidth * 0.8;
     el.scrollBy({ left: dir === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
   };
 
