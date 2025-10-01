@@ -1,8 +1,20 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+}
+body {
+  background: #120b04;
+  background: radial-gradient(circle, rgba(18, 11, 4, 1) 21%, rgba(27, 16, 5, 1) 75%, rgba(32, 19, 5, 1) 91%, rgba(38, 22, 6, 1) 100%);
+}
+
+.bg-hero {
+  background: #120b04;
+  background: radial-gradient(circle, rgba(18, 11, 4, 1) 21%, rgba(27, 16, 5, 1) 75%, rgba(32, 19, 5, 1) 91%, rgba(38, 22, 6, 1) 100%);
 }
 
 @theme {
@@ -10,20 +22,17 @@
   --color-input: oklch(90% 0 0 / 0.1);
   --color-ring: oklch(90% 0 0 / 0.1);
 
-  --color-background: 0% 0% 100%;
-  --color-foreground: oklch(25% 0 0);
-
-  --color-primary: oklch(25% 0 0);
-  --color-primary-foreground: oklch(95% 0 0);
+  --color-primary: #120b04;
+  --color-primary-foreground: #fbefd8;
 
   --color-secondary: oklch(95% 0 0);
-  --color-secondary-foreground: oklch(25% 0 0);
+  --color-secondary-foreground: #bcb4a5;
 
   --color-destructive: oklch(60% 0.15 25);
   --color-destructive-foreground: oklch(95% 0 0);
 
   --color-muted: oklch(95% 0 0);
-  --color-muted-foreground: oklch(60% 0 0);
+  --color-muted-foreground: #fbefd8ce;
 
   --color-accent: oklch(95% 0 0);
   --color-accent-foreground: oklch(25% 0 0);
@@ -31,40 +40,120 @@
   --color-popover: 0% 0% 100%;
   --color-popover-foreground: oklch(25% 0 0);
 
-  --color-card: 0% 0% 100%;
-  --color-card-foreground: oklch(25% 0 0);
-
-  --border-radius-lg: 0.5rem;
+  --color-card: #23180d;
+  --color-card-foreground: #fbefd8;
 }
 
-@theme dark {
-  --color-background: oklch(25% 0 0);
-  --color-foreground: oklch(95% 0 0);
-
-  --color-primary: oklch(95% 0 0);
-  --color-primary-foreground: oklch(25% 0 0);
-
-  --color-secondary: oklch(25% 0 0);
-  --color-secondary-foreground: oklch(95% 0 0);
-
-  --color-destructive: oklch(60% 0.15 25);
-  --color-destructive-foreground: oklch(95% 0 0);
-
-  --color-muted: oklch(25% 0 0);
-  --color-muted-foreground: oklch(60% 0 0);
-
-  --color-accent: oklch(25% 0 0);
-  --color-accent-foreground: oklch(95% 0 0);
-
-  --color-popover: oklch(25% 0 0);
-  --color-popover-foreground: oklch(95% 0 0);
-
-  --color-card: oklch(25% 0 0);
-  --color-card-foreground: oklch(95% 0 0);
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@theme {
+  --font-vazir: "Vazirmatn", system-ui, sans-serif;
+}
+
+@layer components {
+  .main-container {
+    @apply p-7 w-full max-w-6xl mx-auto;
+  }
+  .section-container {
+    @apply flex flex-col items-start gap-5 my-10;
+  }
+  .title {
+    @apply text-primary-foreground text-center text-xl md:text-2xl lg:text-4xl font-vazir font-bold mb-16;
+  }
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* برای IE و Edge */
+  scrollbar-width: none; /* برای Firefox */
+}
+
+.img-flip {
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.blog-content h3 {
+  @apply text-primary-foreground text-center lg:text-right text-xl md:text-2xl lg:text-3xl font-vazir font-semibold my-5;
+}
+.blog-content p {
+  @apply text-sm text-primary-foreground font-vazir w-full  leading-10 text-center lg:text-right;
+}
+.blog-content ul li {
+  @apply text-sm text-primary-foreground font-vazir w-full  leading-10 text-center lg:text-right px-3;
+}
+.blog-content p {
+  @apply text-sm text-primary-foreground font-vazir w-full  leading-10 text-center lg:text-right;
 }
