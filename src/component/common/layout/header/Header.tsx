@@ -47,15 +47,16 @@ const Header: FC = () => {
               <Link href={item.url}>{item.title}</Link>
             </li>
           ))}
-          <li></li>
+          {/* <li></li> */}
         </ul>
-        <button onClick={() => setSidebarOpen(true)} className="md:hidden bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">
-          <GiHamburgerMenu className="text-primary text-2xl" />
-        </button>
+
         <div className="flex items-center gap-5">
           <Link href="/login" className="bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">
             <BiSolidLogIn className="text-primary text-2xl" />
           </Link>
+          <button onClick={() => setSidebarOpen(true)} className="md:hidden bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">
+            <GiHamburgerMenu className="text-primary text-2xl" />
+          </button>
         </div>
       </div>
       <Sidebar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen} />

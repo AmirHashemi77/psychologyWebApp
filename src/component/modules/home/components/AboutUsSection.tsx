@@ -64,8 +64,8 @@ const AboutUsSection: FC = () => {
               ))}
             </div>
           </div>
-          <div className="relative w-full xl:w-1/2 h-full rounded-2xl bg-hero p-5">
-            <Image fill objectFit="cover" objectPosition="center" alt="hero-img" src="/images/ChatGPT Image Sep 1, 2025, 12_50_04 PM.png" className="rounded-2xl " />
+          <div className="relative w-full xl:w-1/2 h-full rounded-2xl bg-transparent p-5">
+            <Image fill objectFit="contain" alt="hero-img" src="/images/ChatGPT Image Sep 1, 2025, 12_50_04 PM.png" className="rounded-2xl " />
           </div>
         </div>
       </div>
