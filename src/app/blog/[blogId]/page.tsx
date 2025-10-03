@@ -13,6 +13,11 @@ const BlogDetails: FC = () => {
               استرس بخشی اجتناب‌ناپذیر از زندگی انسان است، اما اگر به‌درستی مدیریت نشود، می‌تواند منجر به مشکلات جسمی و روانی شود. در این مقاله ابتدا به تعریف استرس و تأثیرات آن می‌پردازیم و سپس
               راهکارهای عملی برای کنترل و کاهش استرس در زندگی روزمره ارائه خواهیم کرد.
             </p>
+            <div className="flex items-center justify-between w-full mt-10 flex-wrap">
+              <p className="text-xs text-center font-medium text-secondary-foreground">تاریخ انتشار: ۱۴۰۴/۰۳/۲۰</p>
+              <p className="text-xs text-center font-medium text-secondary-foreground">نویسنده: مرضیه خمسه</p>
+              <button className="bg-card-foreground text-xs text-center text-card font-medium px-3 py-1 rounded-2xl">لینک مقاله</button>
+            </div>
           </div>
           <div className="w-full lg:w-96 h-96 relative">
             <Image src="/images/ChatGPT Image Aug 15, 2025, 03_19_41 PM.png" fill alt="blog" className="object-cover md:object-center lg:object-cover rounded-2xl" />

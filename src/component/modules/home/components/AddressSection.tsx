@@ -1,5 +1,6 @@
 import { FC } from "react";
 import AddressCard from "@/component/common/addressCard/AddressCard";
+import Image from "next/image";
 
 // interface PropsType {}
 const clinics = [
@@ -25,7 +26,7 @@ const clinics = [
 
 const AddressSection: FC = () => {
   return (
-    <div className="main-container">
+    <div className="main-container relative">
       <div className="flex flex-col items-center gap-5 my-10">
         <h4 className="title self-start">آدرس کلینینک ها</h4>
         <div className="grid grid-cols-12  items-center justify-between gap-5">
@@ -34,6 +35,7 @@ const AddressSection: FC = () => {
           })}
         </div>
       </div>
+      <Image width={300} height={600} src="/images/bg-vector.svg" className="hidden md:block absolute z-0  bottom-1 -left-3 opacity-25" alt="vector" />
     </div>
   );
 };
