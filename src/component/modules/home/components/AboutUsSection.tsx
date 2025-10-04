@@ -26,7 +26,7 @@ const membershipsAndLicenses = [
 
 const AboutUsSection: FC = () => {
   return (
-    <div className="main-container">
+    <div className="main-container ">
       <div className="section-container">
         <h4 className="title">درباره ما</h4>
         <div className="flex flex-col-reverse md:flex-row justify-between gap-6 w-full h-screen">
