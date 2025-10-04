@@ -62,7 +62,7 @@ export default function FaqSection() {
   };
 
   return (
-    <div className="main-container">
+    <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }} className="main-container">
       <div className="flex flex-col items-center gap-5 my-10">
         <h4 className="title self-start">سوالات متداول</h4>
         <div className="flex flex-col items-center gap-5 w-full">
@@ -84,6 +84,6 @@ export default function FaqSection() {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

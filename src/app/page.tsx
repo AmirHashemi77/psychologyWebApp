@@ -13,9 +13,9 @@ export default function Home() {
       <HeroSection />
       <LastArticleSection />
       <AboutUsSection />
-      <div className="w-full relative">
-        <Image width={300} height={600} src="/images/vector-01.png" className="hidden md:block absolute z-0  -bottom-24 right-0 opacity-25" alt="vector" />
-        <Image width={300} height={600} src="/images/vector-01.png" className="hidden md:block absolute z-0  -bottom-24 left-0 opacity-25" alt="vector" />
+      <div className="w-full relative hidden 2xl:block">
+        <Image width={300} height={600} src="/images/vector-01.png" className=" absolute z-0  -bottom-24 right-0 opacity-25" alt="vector" />
+        <Image width={300} height={600} src="/images/vector-01.png" className=" absolute z-0  -bottom-24 left-0 opacity-25" alt="vector" />
       </div>
 
       <CommentsSection />

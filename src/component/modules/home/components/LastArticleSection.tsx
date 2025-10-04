@@ -1,6 +1,8 @@
+"use client";
 import Card from "@/component/common/Card/Card";
 import CardSlider from "@/component/common/cardSlider/CardSlider";
 import { FC } from "react";
+import { motion } from "framer-motion";
 
 const DUMMY_DATA = [
   {
@@ -47,7 +49,7 @@ const DUMMY_DATA = [
 
 const LastArticleSection: FC = () => {
   return (
-    <div className="main-container">
+    <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }} className="main-container">
       <div className="section-container">
         <h4 className="title">آخرین مقالات</h4>
         {/* <div className="flex flex-row items-center justify-between flex-wrap gap-10"> */}
@@ -58,7 +60,7 @@ const LastArticleSection: FC = () => {
         </CardSlider>
         {/* </div> */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default LastArticleSection;

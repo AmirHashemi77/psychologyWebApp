@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import { FC } from "react";
+import { motion } from "framer-motion";
 
 const educationAndProfessionalBackground = [
   "دانشجویی دکتری روانشناسی علوم و تحقیقات تهران",
@@ -26,7 +28,7 @@ const membershipsAndLicenses = [
 
 const AboutUsSection: FC = () => {
   return (
-    <div className="main-container ">
+    <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }} className="main-container ">
       <div className="section-container">
         <h4 className="title">درباره ما</h4>
         <div className="flex flex-col-reverse md:flex-row justify-between gap-6 w-full h-screen">
@@ -69,7 +71,7 @@ const AboutUsSection: FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default AboutUsSection;
