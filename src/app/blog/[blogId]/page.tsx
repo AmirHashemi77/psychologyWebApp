@@ -23,7 +23,9 @@ const BlogDetails: FC = () => {
             <Image src="/images/ChatGPT Image Aug 15, 2025, 03_19_41 PM.png" fill alt="blog" className="object-cover md:object-center lg:object-cover rounded-2xl" />
           </div>
         </div>
-        <Divider />
+        <div className="w-full my-10">
+          <Divider />
+        </div>
         <div className="bg-card p-5 rounded-2xl blog-content">
           <h3>استرس چیست؟</h3>
           <p>

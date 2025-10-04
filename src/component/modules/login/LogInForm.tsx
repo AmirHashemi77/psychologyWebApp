@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FC } from "react";
 
 const LogInForm: FC = () => {
@@ -13,7 +14,9 @@ const LogInForm: FC = () => {
       </div>
       <div className="flex flex-col lg:flex-row items-center w-[90%] gap-5 my-3">
         <button className="bg-card-foreground text-lg w-full rounded-2xl font-semibold font-vazir  p-2 cursor-pointer  text-card">ورود</button>
-        <button className="border-card-foreground border-2 bg-transparent text-lg w-full rounded-2xl font-semibold font-vazir  p-2 cursor-pointer  text-card-foreground">ثبت نام</button>
+        <Link href="/signup" className="border-card-foreground border-2 bg-transparent text-lg w-full rounded-2xl font-semibold font-vazir  p-2 cursor-pointer text-center  text-card-foreground">
+          ثبت نام
+        </Link>
       </div>
     </div>
   );
