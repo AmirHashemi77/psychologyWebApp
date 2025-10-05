@@ -20,10 +20,10 @@ const Footer: FC = () => {
               <Link className="text-primary-foreground text-sm lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="">
                 نوبت دهی
               </Link>
-              <Link className="text-primary-foreground text-sm lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="">
+              <Link className="text-primary-foreground text-sm lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="/blogs">
                 مقالات
               </Link>
-              <Link className="text-primary-foreground text-sm lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="">
+              <Link className="text-primary-foreground text-sm lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="/aboutus">
                 درباره ما
               </Link>
             </div>

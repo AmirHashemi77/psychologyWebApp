@@ -13,7 +13,7 @@ const navBarArr = [
   },
   {
     title: "مقالات",
-    url: "/article",
+    url: "/blogs",
   },
   {
     title: "خدمات",
