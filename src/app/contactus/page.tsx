@@ -6,7 +6,7 @@ import Divider from "@/component/common/Divider";
 
 const ContactUs: FC = () => {
   return (
-    <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }} className="main-container">
+    <motion.div initial={{ opacity: 0, y: 80 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="main-container">
       <div className="section-container">
         <div className="bg-card w-full p-5 rounded-xl">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-10 w-full">

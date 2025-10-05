@@ -28,7 +28,7 @@ const membershipsAndLicenses = [
 
 const AboutUs: FC = () => {
   return (
-    <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }} className="main-container my-10">
+    <motion.div initial={{ opacity: 0, y: 80 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="main-container my-10">
       <div className="section-container">
         <h4 className="title">درباره ما</h4>
         <div className="flex flex-col justify-between gap-6 w-full">
