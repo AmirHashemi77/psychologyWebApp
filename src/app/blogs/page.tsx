@@ -1,9 +1,7 @@
 "use client";
 import Card from "@/component/common/Card/Card";
-import CardSlider from "@/component/common/cardSlider/CardSlider";
 import { FC } from "react";
 import { motion } from "framer-motion";
-
 const DUMMY_DATA = [
   {
     id: "1",
@@ -47,20 +45,18 @@ const DUMMY_DATA = [
   },
 ];
 
-const LastArticleSection: FC = () => {
+const BlogsList: FC = () => {
   return (
-    <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }} className="main-container">
+    <motion.div initial={{ opacity: 0, y: 80 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="main-container my-10">
       <div className="section-container">
-        <h4 className="title">آخرین مقالات</h4>
-        {/* <div className="flex flex-row items-center justify-between flex-wrap gap-10"> */}
-        <CardSlider>
+        <h4 className="title">مقالات</h4>
+        <div className="flex items-center justify-between gap-5 flex-wrap">
           {DUMMY_DATA.map((item) => {
             return <Card id={item.id} image={item.image} title={item.title} decription={item.description} subTitle={item.subtitle} tag={item.tag} key={item.id} />;
           })}
-        </CardSlider>
-        {/* </div> */}
+        </div>
       </div>
     </motion.div>
   );
 };
-export default LastArticleSection;
+export default BlogsList;

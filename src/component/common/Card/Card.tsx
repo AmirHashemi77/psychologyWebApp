@@ -29,7 +29,7 @@ const Card: FC<PropsType> = ({ id, image, title, subTitle, decription, tag }) =>
         </div>
         <p className="text-start font-vazir text-lg text-secondary-foreground">{subTitle}</p>
         <p className="text-start font-vazir text-md text-secondary-foreground">{decription}</p>
-        <Link href="" className=" bg-primary-foreground rounded-3xl px-6 py-2 text-primary font-vazir font-semibold hover:scale-110 transition-all duration-300">
+        <Link href={`/blog/${id}`} className=" bg-primary-foreground rounded-3xl px-6 py-2 text-primary font-vazir font-semibold hover:scale-110 transition-all duration-300">
           ادامه مطلب
         </Link>
       </div>

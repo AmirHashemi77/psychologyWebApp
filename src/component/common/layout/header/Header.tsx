@@ -13,7 +13,7 @@ const navBarArr = [
   },
   {
     title: "مقالات",
-    url: "/article",
+    url: "/blogs",
   },
   {
     title: "خدمات",
@@ -25,11 +25,11 @@ const navBarArr = [
   },
   {
     title: "تماس با ما",
-    url: "/contact-us",
+    url: "/contactus",
   },
   {
     title: " درباره ما",
-    url: "about-us",
+    url: "aboutus",
   },
 ];
 
@@ -51,7 +51,7 @@ const Header: FC = () => {
         </ul>
 
         <div className="flex items-center gap-5">
-          <Link href="/login" className="bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">
+          <Link href="/logIn" className="bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">
             <BiSolidLogIn className="text-primary text-2xl" />
           </Link>
           <button onClick={() => setSidebarOpen(true)} className="md:hidden bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">

@@ -26,14 +26,17 @@ const membershipsAndLicenses = [
   "دارای پروانه اشتغال از سازمان نظام روانشناسی و مشاوره ایران",
 ];
 
-const AboutUsSection: FC = () => {
+const AboutUs: FC = () => {
   return (
-    <motion.div initial={{ opacity: 0, y: 80 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.7 }} className="main-container ">
+    <motion.div initial={{ opacity: 0, y: 80 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="main-container my-10">
       <div className="section-container">
         <h4 className="title">درباره ما</h4>
-        <div className="flex flex-col-reverse md:flex-row justify-between gap-6 w-full h-screen">
-          <div className="flex flex-col items-start gap-5 w-full xl:w-1/2 p-5 h-full overflow-y-auto no-scrollbar">
-            <h5 className="text-primary-foreground text-center text-base md:text-xl lg:text-2xl font-vazir font-semibold my-5 ">مرضیه خمسه</h5>
+        <div className="flex flex-col justify-between gap-6 w-full">
+          <div className="relative  h-[500px] rounded-2xl bg-transparent p-5">
+            <Image fill objectFit="contain" alt="hero-img" src="/images/ChatGPT Image Sep 1, 2025, 12_50_04 PM.png" className="rounded-2xl " />
+          </div>
+          <div className="flex flex-col items-start gap-5 w-full p-5 h-full no-scrollbar">
+            <h5 className="text-primary-foreground text-center text-base md:text-xl lg:text-4xl font-vazir font-semibold my-5 ">مرضیه خمسه</h5>
 
             <p className="text-primary-foreground text-right font-bold  py-5 font-vazir leading-11">
               دکتر مرضیه خمسه یک روان درمانگر و روانشناس ایرانی عضو انجمن روانشناسی امریکا (APA) بیش از 16 سال تجربه در مشاوره (جلسات روان تحلیلی) به صورت حضوری و غیر حضوری (آنلاین) به ایرانیان داخل و
@@ -66,12 +69,9 @@ const AboutUsSection: FC = () => {
               ))}
             </div>
           </div>
-          <div className="relative w-full xl:w-1/2 h-full rounded-2xl bg-transparent p-5">
-            <Image fill objectFit="contain" alt="hero-img" src="/images/ChatGPT Image Sep 1, 2025, 12_50_04 PM.png" className="rounded-2xl " />
-          </div>
         </div>
       </div>
     </motion.div>
   );
 };
-export default AboutUsSection;
+export default AboutUs;
