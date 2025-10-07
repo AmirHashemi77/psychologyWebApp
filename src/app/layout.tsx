@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/component/common/layout/header/Header";
 import Footer from "@/component/common/layout/footer/Footer";
+import ClientWrapper from "@/component/ClientWrapper";
 
 export default function RootLayout({
   children,
@@ -13,7 +14,7 @@ export default function RootLayout({
     <html lang="en" dir="rtl">
       <body>
         <Header />
-        {children}
+        <ClientWrapper>{children}</ClientWrapper>
         <Footer />
       </body>
     </html>
