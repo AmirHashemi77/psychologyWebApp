@@ -29,7 +29,7 @@ const navBarArr = [
   },
   {
     title: " درباره ما",
-    url: "aboutus",
+    url: "/aboutus",
   },
 ];
 
@@ -51,7 +51,10 @@ const Header: FC = () => {
         </ul>
 
         <div className="flex items-center gap-5">
-          <Link href="/logIn" className="bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">
+          <Link href="/logIn" className="bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all relative group">
+            <p className="text-xs text-primary bg-primary-foreground p-2 rounded-md absolute -bottom-[40px] right-1/2 translate-x-1/2 text-center hidden group-hover:block font-medium text-nowrap">
+              ورود / ثبت نام
+            </p>
             <BiSolidLogIn className="text-primary text-2xl" />
           </Link>
           <button onClick={() => setSidebarOpen(true)} className="lg:hidden bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">

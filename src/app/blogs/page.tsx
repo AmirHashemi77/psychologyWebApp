@@ -2,6 +2,8 @@
 import Card from "@/component/common/Card/Card";
 import { FC } from "react";
 import { motion } from "framer-motion";
+import { toPersianNumber } from "@/utils/ToPersionDigits";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const DUMMY_DATA = [
   {
     id: "1",
@@ -55,6 +57,17 @@ const BlogsList: FC = () => {
             return <Card id={item.id} image={item.image} title={item.title} decription={item.description} subTitle={item.subtitle} tag={item.tag} key={item.id} />;
           })}
         </div>
+        <ul className="relative w-full px-5 py-2 my-10 max-w-lg bg-card-foreground shadow-2xl rounded-3xl flex flex-row-reverse items-center justify-center gap-5 self-center">
+          <div className="flex items-center justify-center cursor-pointer text-xl font-medium font-vazir text-center  rounded-full w-10 h-10 bg-card ">
+            <FaChevronLeft className="text-card-foreground" />
+          </div>
+          <li className="flex items-center justify-center cursor-pointer text-xl font-medium font-vazir text-center text-card-foreground rounded-full w-10 h-10 bg-card ">{toPersianNumber(2)}</li>
+          <span className="flex items-center justify-center text-card font-bold font-vazir w-10 h-10"> از</span>
+          <li className="flex items-center justify-center cursor-pointer text-xl font-medium font-vazir text-center text-card-foreground rounded-full w-10 h-10 bg-card ">{toPersianNumber(10)}</li>
+          <div className="flex items-center justify-center cursor-pointer text-xl font-medium font-vazir text-center  rounded-full w-10 h-10 bg-card ">
+            <FaChevronRight className="text-card-foreground" />
+          </div>
+        </ul>
       </div>
     </motion.div>
   );
