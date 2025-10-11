@@ -7,6 +7,7 @@ import { MdArticle, MdClose } from "react-icons/md";
 import SideBarItem from "./SliderBarItem";
 import { FaUserDoctor } from "react-icons/fa6";
 import { TbFileCv } from "react-icons/tb";
+import HeaderLogo from "../layout/header/HeaderLogo";
 
 interface Iprops {
   isSidebarOpen: boolean;
@@ -56,19 +57,19 @@ const Sidebar: FC<Iprops> = ({ isSidebarOpen, setSidebarOpen }) => {
       dropdownItems: [],
     },
     {
-      href: "#",
+      href: "/blogs",
       icon: <MdArticle className="text-primary-foreground" />,
       title: "مقالات",
       dropdownItems: [],
     },
     {
-      href: "#",
+      href: "/aboutus",
       icon: <TbFileCv className="text-primary-foreground" />,
       title: "درباره ما",
       dropdownItems: [],
     },
     {
-      href: "#",
+      href: "/cantactus",
       icon: <FaPhoneAlt className="text-primary-foreground" />,
       title: "تماس ما",
       dropdownItems: [],
@@ -77,12 +78,12 @@ const Sidebar: FC<Iprops> = ({ isSidebarOpen, setSidebarOpen }) => {
 
   return (
     <>
-      {isSidebarOpen && <div className="md:hidden fixed inset-0 bg-black/80   z-30" onClick={() => setSidebarOpen(false)} />}
-      <div className={`md:hidden fixed top-0 right-0 z-50 w-72 shadow-md rounded-md h-screen transition-transform duration-700 transform ${isSidebarOpen ? "translate-x-0" : "translate-x-full"} `}>
+      {isSidebarOpen && <div className="lg:hidden fixed inset-0 bg-black/80   z-30" onClick={() => setSidebarOpen(false)} />}
+      <div className={`lg:hidden fixed top-0 right-0 z-50 w-72 shadow-md rounded-md h-screen transition-transform duration-700 transform ${isSidebarOpen ? "translate-x-0" : "translate-x-full"} `}>
         <div className="h-full px-3 py-4  z-[1000003] bg-primary ">
-          <MdClose className="md:hidden cursor-pointer text-primary-foreground w-5 h-5 fixed left-3 top-5" onClick={() => setSidebarOpen(false)} />
-          <div className="fixed right-3 top-4">
-            <h1 className=" text-primary-foreground font-bold">LOGO</h1>
+          <MdClose className="lg:hidden cursor-pointer text-primary-foreground w-5 h-5 fixed left-3 top-5" onClick={() => setSidebarOpen(false)} />
+          <div className="fixed right-3 -top-3">
+            <HeaderLogo />
           </div>
           <div className="w-full mt-14 flex flex-col items-center">
             {data.map((item, index) => (

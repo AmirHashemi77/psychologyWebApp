@@ -54,7 +54,7 @@ const Header: FC = () => {
           <Link href="/logIn" className="bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">
             <BiSolidLogIn className="text-primary text-2xl" />
           </Link>
-          <button onClick={() => setSidebarOpen(true)} className="md:hidden bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">
+          <button onClick={() => setSidebarOpen(true)} className="lg:hidden bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">
             <GiHamburgerMenu className="text-primary text-2xl" />
           </button>
         </div>
