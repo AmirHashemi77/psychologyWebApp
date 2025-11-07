@@ -58,7 +58,7 @@ export default function CardSlider({ children }: { children: ReactNode }) {
         onClick={() => scroll("left")} // <- تغییر کرد: به سمت چپ (بعدی) می‌رود
         // disabled={!canScrollRight} // <- تغییر کرد: چک کردن انتها
         className={`absolute left-2 top-1/2 -translate-y-1/2 p-5 bg-black/70 hover:bg-black shadow rounded-full transition-all duration-300 cursor-pointer z-10
-                    ${!canScrollRight ? "opacity-30 cursor-not-allowed" : ""}`}
+                   `}
       >
         <BiChevronLeft className="w-5 h-5 md:w-10 md:h-10 text-white" />
       </button>
@@ -73,7 +73,7 @@ export default function CardSlider({ children }: { children: ReactNode }) {
         onClick={() => scroll("right")} // <- تغییر کرد: به سمت راست (قبلی) می‌رود
         // disabled={!canScrollLeft} // <- تغییر کرد: چک کردن ابتدا
         className={`absolute right-2 top-1/2 -translate-y-1/2 p-5 bg-black/70 hover:bg-black shadow rounded-full transition-all duration-300 cursor-pointer z-10
-                    ${!canScrollLeft ? "opacity-30 cursor-not-allowed" : ""}`}
+                    `}
       >
         <BiChevronRight className="w-5 h-5 md:w-10 md:h-10 text-white" />
       </button>
