@@ -5,7 +5,7 @@ import FooterLogo from "./FooterLogo";
 
 const Footer: FC = () => {
   return (
-    <footer className="w-full bg-black p-5 mt-10">
+    <footer className="w-full bg-primary p-5 mt-10">
       <div className="w-full max-w-4xl mx-auto">
         <div className="flex flex-col gap-28 md:gap-10 md:flex-row w-full items-center justify-between">
           <div className="flex flex-col md:flex-row items-center gap-32">
