@@ -15,10 +15,10 @@ const Footer: FC = () => {
             <div className="flex flex-col gap-2">
               <p className="text-primary-foreground text-3xl font-semibold font-vazir">دسترسی ها</p>
               <Link className="text-primary-foreground text-sm lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="">
-                سوالات متداول
+                خدمات
               </Link>
               <Link className="text-primary-foreground text-sm lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="">
-                نوبت دهی
+                همکاران
               </Link>
               <Link className="text-primary-foreground text-sm lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="/blogs">
                 مقالات

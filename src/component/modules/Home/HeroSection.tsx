@@ -16,7 +16,7 @@ const HeroSection: FC = () => {
             <p className="text-secondary-foreground font-vazir font-medium text-sm lg:text-base">.</p>
             <p className="text-secondary font-vazir font-medium text-nowrap text-sm lg:text-base">مدیریت استرس</p>
             <p className="text-secondary-foreground font-vazir font-medium text-sm lg:text-base">.</p>
-            <p className="text-secondary font-vazir font-medium text-nowrap text-sm lg:text-base">مهارت نه گفتن</p>
+            <p className="text-secondary font-vazir font-medium text-nowrap text-sm lg:text-base">طرحواره‌درمانی</p>
           </div>
         </div>
       </div>

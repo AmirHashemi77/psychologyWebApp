@@ -53,7 +53,13 @@ const Sidebar: FC<Iprops> = ({ isSidebarOpen, setSidebarOpen }) => {
     {
       href: "#",
       icon: <IoIosHelpCircle className="text-primary-foreground" />,
-      title: "نوبت دهی",
+      title: "کارگاه ها",
+      dropdownItems: [],
+    },
+    {
+      href: "#",
+      icon: <IoIosHelpCircle className="text-primary-foreground" />,
+      title: "همکاران",
       dropdownItems: [],
     },
     {
