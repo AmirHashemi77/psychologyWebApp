@@ -32,16 +32,16 @@ const Footer: FC = () => {
             <p className="text-primary-foreground text-xl font-semibold font-vazir">ما را دنبال کنید :</p>
             <div className="flex items-center gap-5">
               <Link href="">
-                <FaFacebook className="text-3xl  text-muted-foreground hover:text-primary-foreground transition-all duration-200" />
+                <FaFacebook className="text-3xl  text-secondary hover:text-primary-foreground transition-all duration-200" />
               </Link>
               <Link href="">
-                <FaInstagram className="text-3xl  text-muted-foreground hover:text-primary-foreground transition-all duration-200" />
+                <FaInstagram className="text-3xl  text-secondary hover:text-primary-foreground transition-all duration-200" />
               </Link>
               <Link href="">
-                <FaWhatsapp className="text-3xl  text-muted-foreground hover:text-primary-foreground transition-all duration-200" />
+                <FaWhatsapp className="text-3xl  text-secondary hover:text-primary-foreground transition-all duration-200" />
               </Link>
               <Link href="">
-                <FaTelegram className="text-3xl  text-muted-foreground hover:text-primary-foreground transition-all duration-200" />
+                <FaTelegram className="text-3xl  text-secondary hover:text-primary-foreground transition-all duration-200" />
               </Link>
             </div>
           </div>

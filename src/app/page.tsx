@@ -1,10 +1,13 @@
+import AboutUsSection from "@/component/modules/AboutUs/AboutUsSection";
 import HeroSection from "@/component/modules/Home/HeroSection";
-import Image from "next/image";
+import Services from "@/component/modules/Home/ServicesSection/Services";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
+      <Services />
+      <AboutUsSection />
     </>
   );
 }

@@ -12,11 +12,11 @@ const HeroSection: FC = () => {
             مـــرکز روانـــشنــاسی <br /> دکتر مــــرضیه خـــمســه
           </h1>
           <div className="flex items-center gap-4 px-3">
-            <p className="text-secondary font-vazir font-medium text-nowrap text-sm">زوج درمانی</p>
-            <p className="text-secondary-foreground font-vazir font-medium text-sm">.</p>
-            <p className="text-secondary font-vazir font-medium text-nowrap text-sm">مدیریت استرس</p>
-            <p className="text-secondary-foreground font-vazir font-medium text-sm">.</p>
-            <p className="text-secondary font-vazir font-medium text-nowrap text-sm">مهارت نه گفتن</p>
+            <p className="text-secondary font-vazir font-medium text-nowrap text-sm lg:text-base">زوج درمانی</p>
+            <p className="text-secondary-foreground font-vazir font-medium text-sm lg:text-base">.</p>
+            <p className="text-secondary font-vazir font-medium text-nowrap text-sm lg:text-base">مدیریت استرس</p>
+            <p className="text-secondary-foreground font-vazir font-medium text-sm lg:text-base">.</p>
+            <p className="text-secondary font-vazir font-medium text-nowrap text-sm lg:text-base">مهارت نه گفتن</p>
           </div>
         </div>
       </div>
