@@ -8,27 +8,26 @@ html {
   direction: rtl;
 }
 body {
-  background: #120b04;
-  background: radial-gradient(circle, rgba(18, 11, 4, 1) 21%, rgba(27, 16, 5, 1) 75%, rgba(32, 19, 5, 1) 91%, rgba(38, 22, 6, 1) 100%);
+  background: #e4e8e9;
+  /* background: radial-gradient(circle, rgba(18, 11, 4, 1) 21%, rgba(27, 16, 5, 1) 75%, rgba(32, 19, 5, 1) 91%, rgba(38, 22, 6, 1) 100%); */
 }
 
 .bg-hero {
-  background: #120b04;
-  background: radial-gradient(circle, rgba(18, 11, 4, 1) 21%, rgba(27, 16, 5, 1) 75%, rgba(32, 19, 5, 1) 91%, rgba(38, 22, 6, 1) 100%);
+  background: #e4e8e9;
+  /* background: radial-gradient(circle, rgba(18, 11, 4, 1) 21%, rgba(27, 16, 5, 1) 75%, rgba(32, 19, 5, 1) 91%, rgba(38, 22, 6, 1) 100%); */
 }
 
 @theme {
-  --color-border: oklch(90% 0 0 / 0.1);
-  --color-input: oklch(90% 0 0 / 0.1);
-  --color-ring: oklch(90% 0 0 / 0.1);
+  --color-background: #e4e8e9;
+  --color-foreground: #4a4a4a;
 
-  --color-primary: #120b04;
-  --color-primary-foreground: #fbefd8;
+  --color-primary: #485733;
+  --color-primary-foreground: #ffffff;
 
-  --color-secondary: oklch(95% 0 0);
-  --color-secondary-foreground: #bcb4a5;
+  --color-secondary: #e9b643;
+  --color-secondary-foreground: #ffffff;
 
-  --color-destructive: oklch(60% 0.15 25);
+  /* --color-destructive: oklch(60% 0.15 25);
   --color-destructive-foreground: oklch(95% 0 0);
 
   --color-muted: oklch(95% 0 0);
@@ -41,7 +40,7 @@ body {
   --color-popover-foreground: oklch(25% 0 0);
 
   --color-card: #23180d;
-  --color-card-foreground: #fbefd8;
+  --color-card-foreground: #fbefd8; */
 }
 
 @font-face {
@@ -120,15 +119,6 @@ body {
 }
 
 @layer components {
-  .main-container {
-    @apply p-7 w-full max-w-6xl mx-auto;
-  }
-  .section-container {
-    @apply flex flex-col items-start gap-5 my-10;
-  }
-  .title {
-    @apply text-primary-foreground text-center text-xl md:text-2xl lg:text-4xl font-vazir font-bold mb-16;
-  }
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;

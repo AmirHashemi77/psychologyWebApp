@@ -52,19 +52,19 @@ export default function CardSlider({ children }: { children: ReactNode }) {
   // --- تغییرات اصلی اینجا در JSX است ---
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full my-10">
       {/* دکمه چپ (بعدی) */}
       <button
         onClick={() => scroll("left")} // <- تغییر کرد: به سمت چپ (بعدی) می‌رود
         // disabled={!canScrollRight} // <- تغییر کرد: چک کردن انتها
-        className={`absolute left-2 top-1/2 -translate-y-1/2 p-5 bg-black/70 hover:bg-black shadow rounded-full transition-all duration-300 cursor-pointer z-10
+        className={`absolute -left-5 top-1/2 -translate-y-1/2 p-5 bg-primary/60 hover:bg-primary shadow rounded-full transition-all duration-300 cursor-pointer z-10
                    `}
       >
-        <BiChevronLeft className="w-5 h-5 md:w-10 md:h-10 text-white" />
+        <BiChevronLeft className="w-5 h-5  text-white" />
       </button>
 
       {/* کانتینر کارت‌ها */}
-      <div ref={containerRef} className="flex overflow-x-auto gap-4 scroll-smooth no-scrollbar">
+      <div ref={containerRef} className="flex overflow-x-auto  scroll-smooth no-scrollbar ">
         {children}
       </div>
 
@@ -72,10 +72,10 @@ export default function CardSlider({ children }: { children: ReactNode }) {
       <button
         onClick={() => scroll("right")} // <- تغییر کرد: به سمت راست (قبلی) می‌رود
         // disabled={!canScrollLeft} // <- تغییر کرد: چک کردن ابتدا
-        className={`absolute right-2 top-1/2 -translate-y-1/2 p-5 bg-black/70 hover:bg-black shadow rounded-full transition-all duration-300 cursor-pointer z-10
+        className={`absolute -right-5 top-1/2 -translate-y-1/2 p-5 bg-primary/60 hover:bg-primary shadow rounded-full transition-all duration-300 cursor-pointer z-10
                     `}
       >
-        <BiChevronRight className="w-5 h-5 md:w-10 md:h-10 text-white" />
+        <BiChevronRight className="w-5 h-5  text-white" />
       </button>
     </div>
   );

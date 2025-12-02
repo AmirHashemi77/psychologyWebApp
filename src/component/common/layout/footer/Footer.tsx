@@ -5,7 +5,7 @@ import FooterLogo from "./FooterLogo";
 
 const Footer: FC = () => {
   return (
-    <footer className="w-full bg-black p-5 mt-10">
+    <footer className="w-full bg-primary p-5 mt-10">
       <div className="w-full max-w-4xl mx-auto">
         <div className="flex flex-col gap-28 md:gap-10 md:flex-row w-full items-center justify-between">
           <div className="flex flex-col md:flex-row items-center gap-32">
@@ -32,16 +32,16 @@ const Footer: FC = () => {
             <p className="text-primary-foreground text-xl font-semibold font-vazir">ما را دنبال کنید :</p>
             <div className="flex items-center gap-5">
               <Link href="">
-                <FaFacebook className="text-3xl  text-muted-foreground hover:text-primary-foreground transition-all duration-200" />
+                <FaFacebook className="text-3xl  text-secondary hover:text-primary-foreground transition-all duration-200" />
               </Link>
               <Link href="">
-                <FaInstagram className="text-3xl  text-muted-foreground hover:text-primary-foreground transition-all duration-200" />
+                <FaInstagram className="text-3xl  text-secondary hover:text-primary-foreground transition-all duration-200" />
               </Link>
               <Link href="">
-                <FaWhatsapp className="text-3xl  text-muted-foreground hover:text-primary-foreground transition-all duration-200" />
+                <FaWhatsapp className="text-3xl  text-secondary hover:text-primary-foreground transition-all duration-200" />
               </Link>
               <Link href="">
-                <FaTelegram className="text-3xl  text-muted-foreground hover:text-primary-foreground transition-all duration-200" />
+                <FaTelegram className="text-3xl  text-secondary hover:text-primary-foreground transition-all duration-200" />
               </Link>
             </div>
           </div>
