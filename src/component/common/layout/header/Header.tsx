@@ -4,6 +4,7 @@ import { FC, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Sidebar from "../../sidebar/Sidebar";
 import Image from "next/image";
+import HeaderLogo from "./HeaderLogo";
 
 const navBarArr = [
   {
@@ -46,9 +47,8 @@ const Header: FC = () => {
           ))}
           {/* <li></li> */}
         </ul>
-        {/* <HeaderLogo /> */}
-        <h1 className="text-primary-foreground  font-vazir font-bold">جا لوگویی روانشناس</h1>
-        {/* <Image width={100} height={100} src="/images/whiteLogo.svg" className="my-5" alt="logo" /> */}
+        <HeaderLogo />
+        {/* <h1 className="text-primary-foreground  font-vazir font-bold">جا لوگویی روانشناس</h1> */}
         <div className="lg:hidden flex items-center gap-5">
           <button onClick={() => setSidebarOpen(true)} className="lg:hidden bg-primary-foreground rounded-lg p-0.5 hover:bg-[#fbefd8b0] transition-all">
             <GiHamburgerMenu className="text-primary text-2xl" />
