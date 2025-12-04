@@ -8,9 +8,9 @@ import Image from "next/image";
 
 const Footer: FC = () => {
   return (
-    <footer className="w-full bg-primary p-5 mt-10 relative ">
-      <Image src="/images/footer-bg.png" fill alt="bg-footer" className=" opacity-10" />
-      <div className="w-full max-w-6xl mx-auto">
+    <footer className="w-full bg-gradient-to-b from-primary to-[#424f2e] p-5 mt-10 relative ">
+      <Image src="/images/footer-bg.png" fill alt="bg-footer" className=" opacity-10 " />
+      <div className="w-full max-w-6xl mx-auto relative inset-0 z-10">
         <div className="flex flex-col gap-28 md:gap-10 md:flex-row w-full items-center justify-between flex-wrap">
           <Link className="font-extrabold text-5xl text-primary-foreground " href="/">
             <FooterLogo />
@@ -20,7 +20,7 @@ const Footer: FC = () => {
               <p className="text-primary-foreground text-3xl font-semibold font-vazir"> اطلاعات تماس</p>
               <div className="flex items-start gap-4">
                 <FaLocationDot className="text-xl text-secondary" />
-                <span className="text-primary-foreground font-medium max-w-xs">تهران، میدان پونک، ضلع شمال شرقی میدان پونک، کوچه رمضانی</span>
+                <span className="text-primary-foreground font-medium max-w-xs">تهران، سعادت آباد ، میدان کتاب ، انتهای بلوار کوهستان</span>
               </div>
               <div className="flex items-start gap-4">
                 <FaPhoneFlip className="text-xl text-secondary" />
@@ -33,16 +33,16 @@ const Footer: FC = () => {
             </div>
             <div className="flex flex-col gap-5 ">
               <p className="text-primary-foreground text-3xl font-semibold font-vazir">دســـترسی ها</p>
-              <Link className="text-primary-foreground  lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="">
+              <Link className="text-primary-foreground  lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200 px-2" href="">
                 سوالات متداول
               </Link>
-              <Link className="text-primary-foreground  lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="">
+              <Link className="text-primary-foreground  lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200 px-2" href="">
                 نوبت دهی
               </Link>
-              <Link className="text-primary-foreground  lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="/blogs">
+              <Link className="text-primary-foreground  lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200 px-2" href="/blogs">
                 مقالات
               </Link>
-              <Link className="text-primary-foreground  lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200" href="/aboutus">
+              <Link className="text-primary-foreground  lg:text-lg font-vazir hover:text-muted-foreground transition-all duration-200 px-2" href="/aboutus">
                 درباره ما
               </Link>
             </div>
@@ -58,7 +58,7 @@ const Footer: FC = () => {
                 <Link href="">
                   <FaWhatsapp className="text-3xl  text-secondary hover:text-primary-foreground transition-all duration-200" />
                 </Link>
-                <Link href="">
+                <Link href="https://t.me/R0ADMIN">
                   <FaTelegram className="text-3xl  text-secondary hover:text-primary-foreground transition-all duration-200" />
                 </Link>
               </div>
