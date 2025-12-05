@@ -3,8 +3,8 @@ import Link from "next/link";
 import { FC, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Sidebar from "../../sidebar/Sidebar";
-import Image from "next/image";
 import HeaderLogo from "./HeaderLogo";
+import { usePathname } from "next/navigation";
 
 const navBarArr = [
   {
@@ -35,9 +35,9 @@ const navBarArr = [
 
 const Header: FC = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-
+  const pathname = usePathname();
   return (
-    <header className="flex items-center justify-center absolute top-0 right-0  z-50 w-full h-14 px-5">
+    <header className={`flex items-center justify-center absolute top-0 right-0  z-50 w-full h-14 px-5 ${pathname === "/" ? "bg-transparent" : "bg-primary/95 py-3"}`}>
       <div className="flex items-center justify-between w-full max-w-6xl mx-auto">
         <ul className="hidden lg:flex items-center gap-10">
           {navBarArr.map((item) => (
