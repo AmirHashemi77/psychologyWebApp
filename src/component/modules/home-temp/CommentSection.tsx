@@ -1,4 +1,4 @@
-import AnimationSlider from "@/component/common/AnimatedSlider/AnimationSlider";
+import AnimationSlider from "@/component/common/Animated-Slider/AnimationSlider";
 import Image from "next/image";
 import { FC } from "react";
 
