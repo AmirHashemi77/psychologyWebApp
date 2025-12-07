@@ -2,6 +2,7 @@ import CardSlider from "@/component/common/cardSlider/CardSlider";
 import { FC } from "react";
 import { servicesItems } from "./ServicesItems";
 import ServicesCard from "./ServicesCard";
+import Image from "next/image";
 
 const Services: FC = () => {
   return (
