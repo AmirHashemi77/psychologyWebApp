@@ -75,7 +75,7 @@ const Sidebar: FC<Iprops> = ({ isSidebarOpen, setSidebarOpen }) => {
       dropdownItems: [],
     },
     {
-      href: "/cantactus",
+      href: "/contactus",
       icon: <FaPhoneAlt className="text-primary-foreground" />,
       title: "تماس ما",
       dropdownItems: [],
