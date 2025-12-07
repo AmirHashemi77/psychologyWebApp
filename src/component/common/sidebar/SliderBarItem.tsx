@@ -20,7 +20,7 @@ const SideBarItem = ({ href, icon, title, dropdownItems = [] }: IProps) => {
       {href ? (
         <Link href={href} className="w-full cursor-pointer hover:bg-gray-400 py-3 border-b border-gray-200 grid grid-cols-5 items-center dark:border-gray-500 dark:hover:bg-background ">
           <div className="col-span-1 mx-auto">{icon}</div>
-          <div className="text-sm  col-span-4 text-primary-foreground">{title}</div>
+          <div className="text-sm font-vazir col-span-4 text-primary-foreground">{title}</div>
         </Link>
       ) : (
         <div className="w-full">
