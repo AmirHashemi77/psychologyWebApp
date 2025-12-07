@@ -20,7 +20,11 @@ const navBarArr = [
     url: "/services",
   },
   {
-    title: "نوبت دهی",
+    title: "کارگاه ها",
+    url: "/visit",
+  },
+  {
+    title: "همکاران",
     url: "/visit",
   },
   {

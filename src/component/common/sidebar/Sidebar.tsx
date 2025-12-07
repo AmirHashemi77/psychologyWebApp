@@ -53,7 +53,13 @@ const Sidebar: FC<Iprops> = ({ isSidebarOpen, setSidebarOpen }) => {
     {
       href: "#",
       icon: <IoIosHelpCircle className="text-primary-foreground" />,
-      title: "نوبت دهی",
+      title: "کارگاه ها",
+      dropdownItems: [],
+    },
+    {
+      href: "#",
+      icon: <IoIosHelpCircle className="text-primary-foreground" />,
+      title: "همکاران",
       dropdownItems: [],
     },
     {
@@ -80,7 +86,7 @@ const Sidebar: FC<Iprops> = ({ isSidebarOpen, setSidebarOpen }) => {
     <>
       {isSidebarOpen && <div className="lg:hidden fixed inset-0 bg-black/80   z-30" onClick={() => setSidebarOpen(false)} />}
       <div className={`lg:hidden fixed top-0 right-0 z-50 w-72 shadow-md rounded-md h-screen transition-transform duration-700 transform ${isSidebarOpen ? "translate-x-0" : "translate-x-full"} `}>
-        <div className="h-full px-3 py-4  z-[1000003] bg-primary ">
+        <div className="h-full px-3 py-4  z-[1000003] bg-[#29311f] ">
           <MdClose className="lg:hidden cursor-pointer text-primary-foreground w-5 h-5 fixed left-3 top-5" onClick={() => setSidebarOpen(false)} />
           <div className="fixed right-3 -top-3">
             <HeaderLogo />
