@@ -10,7 +10,7 @@ const ContactUsPage: FC = () => {
 
   return (
     <div className="w-full relative overflow-hidden">
-      <Image src="/images/conectUs.png" width={500} height={400} alt="phone" className="absolute -right-24 top-42 -z-10 opacity-50 " />
+      <Image src="/images/conectUs.png" width={500} height={400} alt="phone" className="hidden lg:block absolute -right-24 top-42 -z-10 opacity-50 " />
       <div className="max-w-5xl w-full mx-auto px-5 pt-32 lg:pt-32 ">
         <div className="text-center space-y-10 mb-10">
           <p className="text-secondary font-vazir font-bold text-lg">در ارتباط باشیم</p>
