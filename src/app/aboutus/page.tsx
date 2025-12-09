@@ -4,7 +4,7 @@ import { FC } from "react";
 const AboutUsPage: FC = () => {
   return (
     <div className="mt-40 max-w-4xl mx-auto">
-      <AboutUsSection />
+      <AboutUsSection hasBrain={false} />
     </div>
   );
 };

@@ -1,10 +1,13 @@
 import { FC } from "react";
 import Image from "next/image";
+interface Iprops {
+  hasBrain?: boolean;
+}
 
-const AboutUsSection: FC = () => {
+const AboutUsSection: FC<Iprops> = ({ hasBrain = true }) => {
   return (
     <div className="w-full relative overflow-hidden">
-      <Image src="/images/brain.png" width={300} height={400} alt="brain" className="hidden xl:block absolute -right-24 top-42 -z-10 opacity-50 -rotate-45" />
+      {hasBrain && <Image src="/images/brain.png" width={300} height={400} alt="brain" className="hidden xl:block absolute -right-24 top-42 -z-10 opacity-50 -rotate-45" />}
       <div className="max-w-6xl w-full px-5 my-16 mx-auto">
         <div className="text-center mb-12">
           <h3 className="text-foreground font-bold font-vazir text-3xl mb-3">دربــاره دکــتر مرضیــه خمســه</h3>
