@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState, useRef, type JSX } from "react";
+import { useState, useRef, type JSX, Dispatch, SetStateAction } from "react";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 
 interface IProps {
@@ -7,9 +7,10 @@ interface IProps {
   icon: JSX.Element;
   title: string;
   dropdownItems: { href: string; title: string }[];
+  setSidebarOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const SideBarItem = ({ href, icon, title, dropdownItems = [] }: IProps) => {
+const SideBarItem = ({ href, icon, title, dropdownItems = [], setSidebarOpen }: IProps) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -18,7 +19,11 @@ const SideBarItem = ({ href, icon, title, dropdownItems = [] }: IProps) => {
   return (
     <div className="w-full">
       {href ? (
-        <Link href={href} className="w-full cursor-pointer hover:bg-gray-400 py-3 border-b border-gray-200 grid grid-cols-5 items-center dark:border-gray-500 dark:hover:bg-background ">
+        <Link
+          onClick={() => setSidebarOpen(false)}
+          href={href}
+          className="w-full cursor-pointer hover:bg-gray-400 py-3 border-b border-gray-200 grid grid-cols-5 items-center dark:border-gray-500 dark:hover:bg-background "
+        >
           <div className="col-span-1 mx-auto">{icon}</div>
           <div className="text-sm font-vazir col-span-4 text-primary-foreground">{title}</div>
         </Link>

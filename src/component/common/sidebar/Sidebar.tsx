@@ -93,7 +93,7 @@ const Sidebar: FC<Iprops> = ({ isSidebarOpen, setSidebarOpen }) => {
           </div>
           <div className="w-full mt-14 flex flex-col items-center">
             {data.map((item, index) => (
-              <SideBarItem key={index} href={item.href} icon={item.icon} title={item.title} dropdownItems={item.dropdownItems} />
+              <SideBarItem setSidebarOpen={setSidebarOpen} key={index} href={item.href} icon={item.icon} title={item.title} dropdownItems={item.dropdownItems} />
             ))}
           </div>
         </div>
