@@ -8,7 +8,7 @@ const CommentSection: FC = () => {
       <Image src="/images/vector.png" width={500} height={400} alt="comment" className="hidden lg:block absolute -left-20 -top-20 2xl:top-0 -z-10 opacity-50 rotate-45" />
       <div className="flex flex-col items-center gap-5 w-full">
         <h3 className="text-foreground font-bold font-vazir text-3xl md:text-4xl ">نــظــرات مـــراجـعیــن</h3>
-        <p className="text-xl text-foreground/70 font-medium font-vazir">آنـــچه مراجــعین دربـاره تـجربــه‌شان مــــی‌گویــند</p>
+        <p className="text-xl text-foreground/70 font-medium font-vazir text-center">آنـــچه مراجــعین دربـاره تـجربــه‌شان مــــی‌گویــند</p>
         <AnimationSlider />
       </div>
     </div>
