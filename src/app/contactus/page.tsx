@@ -10,7 +10,7 @@ const ContactUsPage: FC = () => {
 
   return (
     <div className="w-full relative overflow-hidden">
-      <Image src="/images/conectUs.png" width={500} height={400} alt="phone" className="hidden lg:block absolute -right-24 top-42 -z-10 opacity-50 " />
+      <Image src="/images/conectUs.png" width={500} height={400} alt="phone" className="hidden xl:block absolute -right-24 top-42 -z-10 opacity-50 " />
       <div className="max-w-5xl w-full mx-auto px-5 pt-32 lg:pt-32 ">
         <div className="text-center space-y-10 mb-10">
           <p className="text-secondary font-vazir font-bold text-lg">در ارتباط باشیم</p>
@@ -99,7 +99,7 @@ const ContactUsPage: FC = () => {
             </form>
           </div>
 
-          <div className="flex flex-col items-center md:col-span-2 gap-4">
+          <div className="flex flex-col items-center md:col-span-2 gap-4 h-full">
             <div className="w-full rounded-2xl border border-primary/15 bg-white/70 backdrop-blur p-6 shadow-sm">
               <h3 className="text-foreground font-vazir font-bold text-xl mb-3">ساعات پاسخ‌گویی</h3>
               <ul className="space-y-3 text-foreground/80 font-vazir">
@@ -109,7 +109,7 @@ const ContactUsPage: FC = () => {
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-primary/15 bg-white/70 p-6 shadow-sm flex-1 w-full">
+            <div className="rounded-2xl border border-primary/15 bg-white/70 p-6 shadow-sm flex-1 h-full">
               <h3 className="text-foreground font-vazir font-bold text-xl mb-3">راهنمای حضور در مطب</h3>
               <p className="text-foreground/80 font-vazir leading-10 mb-3">پس از رزرو، موقعیت دقیق مطب و زمان دقیق نوبت برای شما ارسال می‌شود. لطفاً ۱۰ دقیقه زودتر در محل حضور داشته باشید.</p>
               <div className="rounded-lg border border-primary/10 bg-white/70 px-4 py-3 text-foreground/70 font-vazir text-sm">
