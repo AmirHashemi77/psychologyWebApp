@@ -5,6 +5,7 @@ import { FC, useEffect, useMemo, useState } from "react";
 import { FiCalendar, FiFilter, FiTag } from "react-icons/fi";
 
 import { toPersianNumber } from "@/utils/ToPersionDigits";
+import Link from "next/link";
 
 type Article = {
   id: string;
@@ -33,7 +34,7 @@ const articles: Article[] = [
     author: "تیم درمان خمسه",
     publishDate: "1403/08/28",
     tags: ["روابط", "زوج درمانی", "خودشناسی"],
-    imageUrl: "/images/dr-khamseh.png",
+    imageUrl: "/images/article-sample.png",
   },
   {
     id: "sleep-hygiene",
@@ -42,7 +43,7 @@ const articles: Article[] = [
     author: "دکتر مرضیه خمسه",
     publishDate: "1403/08/10",
     tags: ["سلامت روان", "خواب", "آرامش"],
-    imageUrl: "/images/brain.png",
+    imageUrl: "/images/article-sample.png",
   },
   {
     id: "anxiety-grounding",
@@ -60,7 +61,7 @@ const articles: Article[] = [
     author: "دکتر مرضیه خمسه",
     publishDate: "1403/07/15",
     tags: ["والدگری", "کودک", "سلامت خانواده"],
-    imageUrl: "/images/prof.png",
+    imageUrl: "/images/article-sample.png",
   },
   {
     id: "self-compassion",
@@ -78,7 +79,7 @@ const articles: Article[] = [
     author: "دکتر مرضیه خمسه",
     publishDate: "1403/06/05",
     tags: ["خشم", "کنترل احساسات", "زوج درمانی"],
-    imageUrl: "/images/vector.png",
+    imageUrl: "/images/article-sample.png",
   },
   {
     id: "productivity-balance",
@@ -143,18 +144,17 @@ const ArticlesPage: FC = () => {
 
   return (
     <section className="min-h-screen bg-background pb-16">
+      <Image src="/images/article.png" alt="article-vector" className="hidden xl:block absolute top-2/3 right-0 z-0" width={500} height={200} />
       <div className="relative isolate overflow-hidden bg-gradient-to-l from-primary/10 via-background to-secondary/10">
         <div className="absolute -left-10 top-6 h-40 w-40 rounded-full bg-secondary/30 blur-3xl" />
         <div className="absolute -right-14 bottom-6 h-48 w-48 rounded-full bg-primary/25 blur-3xl" />
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 pb-16 pt-24 text-right">
           <div className="flex items-center gap-3 text-secondary font-vazir text-sm md:text-base">
             <FiFilter className="h-5 w-5" />
-            <span>مرکز مقالات و یادداشت‌های روانشناسی</span>
+            <span> مقالات و یادداشت‌های روانشناسی</span>
           </div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-vazir font-black text-primary leading-tight">مرور مقالات، با فیلتر و صفحه‌بندی روان</h1>
-          <p className="max-w-3xl text-foreground/80 font-vazir leading-8">
-            موضوع دلخواهتان را انتخاب کنید، تگ‌های مرتبط را فعال کنید و بین صفحات جابه‌جا شوید. هر کارت شامل تصویر، تایتل، ساب‌تایتل، نویسنده و تاریخ انتشار است.
-          </p>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-vazir font-black text-primary leading-tight">مقالات روانشناسی</h1>
+          <p className="max-w-3xl text-foreground/80 font-vazir leading-8">لیست جدیدترین مقالات روانشناسی | یادگیری مهارت‌های روانی برای زندگی بهتر </p>
           <div className="flex flex-wrap items-center gap-4 text-sm font-vazir text-foreground/70">
             <span className="rounded-full bg-primary/10 px-4 py-2 font-bold text-primary">مجموع: {toPersianNumber(articles.length)} مقاله</span>
             {activeTags.length > 0 ? (
@@ -217,7 +217,7 @@ const ArticlesPage: FC = () => {
           </aside>
 
           <div className="order-1 lg:order-2 lg:col-span-3 flex flex-col gap-6">
-            <div className="flex items-center justify-between gap-3 text-sm font-vazir text-foreground/70">
+            <div className="flex items-center justify-between gap-3 text-sm font-vazir text-foreground/70 p-3 rounded-2xl border border-primary/10 bg-white/80 shadow-xl shadow-primary/10 backdrop-blur ">
               <div>
                 نمایش {toPersianNumber(filteredArticles.length ? start + 1 : 0)} تا {toPersianNumber(Math.min(start + pageSize, filteredArticles.length))} از {toPersianNumber(filteredArticles.length)}{" "}
                 مقاله
@@ -251,7 +251,11 @@ const ArticlesPage: FC = () => {
                         </div>
                         <span className="rounded-full bg-primary/5 px-2 py-1 text-primary">{article.author}</span>
                       </div>
-                      <h3 className="text-lg font-vazir font-extrabold text-primary leading-snug">{article.title}</h3>
+                      <h3 className="text-lg font-vazir font-extrabold text-primary leading-snug">
+                        <Link className="text-lg font-vazir font-extrabold text-primary leading-snug" href={`article/${article.id}`}>
+                          {article.title}
+                        </Link>
+                      </h3>
                       <p className="text-sm font-vazir text-foreground/80 leading-7">{article.subtitle}</p>
                       <div className="mt-auto flex flex-wrap gap-2 pt-2">
                         {article.tags.map((tag) => (

@@ -13,7 +13,7 @@ const navBarArr = [
   },
   {
     title: "مقالات",
-    url: "/blogs",
+    url: "/articles",
   },
   {
     title: "خدمات",
@@ -21,11 +21,11 @@ const navBarArr = [
   },
   {
     title: "کارگاه ها",
-    url: "/visit",
+    url: "#1",
   },
   {
     title: "همکاران",
-    url: "/visit",
+    url: "#",
   },
   {
     title: "تماس با ما",
