@@ -63,7 +63,7 @@ const Sidebar: FC<Iprops> = ({ isSidebarOpen, setSidebarOpen }) => {
       dropdownItems: [],
     },
     {
-      href: "/blogs",
+      href: "/articles",
       icon: <MdArticle className="text-primary-foreground" />,
       title: "مقالات",
       dropdownItems: [],
