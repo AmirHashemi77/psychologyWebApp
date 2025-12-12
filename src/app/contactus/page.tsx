@@ -1,12 +1,19 @@
-"use client";
-
+import { Metadata } from "next";
 import Image from "next/image";
 import { FC, FormEvent } from "react";
 
+export const metadata: Metadata = {
+  title: "تماس با ما",
+  description: "با ما در ارتباط باشید",
+  alternates: {
+    canonical: "/contactus",
+  },
+};
+
 const ContactUsPage: FC = () => {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-  };
+  // const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  // };
 
   return (
     <div className="w-full relative overflow-hidden">
@@ -38,7 +45,7 @@ const ContactUsPage: FC = () => {
         <div className="grid md:grid-cols-5 gap-6 mt-12 items-start">
           <div className="md:col-span-3 bg-white/70 rounded-2xl p-6 shadow-sm">
             <h2 className="text-foreground font-vazir font-bold text-xl mb-4">فرم درخواست نوبت و پیام</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form className="space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="flex flex-col items-start gap-1">
                   <label className="text-foreground/80 font-vazir text-sm p-2 font-medium" htmlFor="name">

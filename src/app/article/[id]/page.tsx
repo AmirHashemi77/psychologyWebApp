@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import { toPersianNumber } from "@/utils/ToPersionDigits";
+import { Metadata, ResolvingMetadata } from "next";
 
 // نوع داده مقاله - می‌توانید این را در یک فایل types جداگانه قرار دهید
 interface Article {
@@ -87,6 +88,34 @@ const sampleArticle: Article = {
 interface ArticleDetailsProps {
   params: {
     id: string;
+  };
+}
+
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+// تابع تولید متادیتای داینامیک
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  // 1. خواندن پارامتر
+  const slug = params.slug;
+
+  // 2. فچ کردن داده (Next.js درخواست‌های تکراری را De-duplicate می‌کند)
+  // const product = await fetch(`https://api.example.com/products/${slug}`).then((res) => res.json());
+  const article = sampleArticle;
+  // 3. دسترسی به تصاویر والد (اختیاری)
+  // const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    title: article.title,
+    description: article.summary,
+    openGraph: {
+      images: [article.imageUrl],
+    },
+    alternates: {
+      canonical: `/article/${slug}`,
+    },
   };
 }
 

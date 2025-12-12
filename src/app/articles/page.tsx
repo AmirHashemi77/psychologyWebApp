@@ -1,11 +1,10 @@
-"use client";
-
 import Image from "next/image";
-import { FC, useEffect, useMemo, useState } from "react";
-import { FiCalendar, FiFilter, FiTag } from "react-icons/fi";
+import Link from "next/link";
+import { FiCalendar, FiFilter } from "react-icons/fi";
 
 import { toPersianNumber } from "@/utils/ToPersionDigits";
-import Link from "next/link";
+import FilterTags from "./components/FilterTags";
+import Pagination from "./components/Pagination";
 
 type Article = {
   id: string;
@@ -112,35 +111,42 @@ const articles: Article[] = [
 
 const pageSize = 6;
 
-const ArticlesPage: FC = () => {
-  const [activeTags, setActiveTags] = useState<string[]>([]);
-  const [page, setPage] = useState(1);
+type PageProps = {
+  searchParams?: {
+    page?: string;
+    tag?: string | string[];
+  };
+};
 
-  const tagList = useMemo(() => Array.from(new Set(articles.flatMap((item) => item.tags))), []);
+const normalizeTags = (value?: string | string[]): string[] => {
+  if (!value) return [];
+  const values = Array.isArray(value) ? value : [value];
+  return Array.from(
+    new Set(
+      values
+        .flatMap((item) => item.split(","))
+        .map((item) => item.trim())
+        .filter(Boolean)
+    )
+  );
+};
 
-  const filteredArticles = useMemo(() => {
-    if (!activeTags.length) return articles;
-    return articles.filter((article) => activeTags.every((tag) => article.tags.includes(tag)));
-  }, [activeTags]);
+const parsePageNumber = (value?: string): number => {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : 1;
+};
 
-  useEffect(() => {
-    setPage(1);
-  }, [activeTags]);
+const ArticlesPage = ({ searchParams }: PageProps) => {
+  const activeTags = normalizeTags(searchParams?.tag);
+  const filteredArticles = activeTags.length
+    ? articles.filter((article) => activeTags.every((tag) => article.tags.includes(tag)))
+    : articles;
 
   const totalPages = Math.max(1, Math.ceil(filteredArticles.length / pageSize));
-  const currentPage = Math.min(page, totalPages);
+  const currentPage = Math.min(parsePageNumber(searchParams?.page), totalPages);
   const start = (currentPage - 1) * pageSize;
   const visibleArticles = filteredArticles.slice(start, start + pageSize);
-
-  const toggleTag = (tag: string) => {
-    setActiveTags((prev) => (prev.includes(tag) ? prev.filter((item) => item !== tag) : [...prev, tag]));
-  };
-
-  const resetFilters = () => setActiveTags([]);
-
-  const goToPage = (target: number) => {
-    setPage(Math.min(totalPages, Math.max(1, target)));
-  };
+  const tagList = Array.from(new Set(articles.flatMap((item) => item.tags)));
 
   return (
     <section className="min-h-screen bg-background pb-16">
@@ -158,9 +164,9 @@ const ArticlesPage: FC = () => {
           <div className="flex flex-wrap items-center gap-4 text-sm font-vazir text-foreground/70">
             <span className="rounded-full bg-primary/10 px-4 py-2 font-bold text-primary">مجموع: {toPersianNumber(articles.length)} مقاله</span>
             {activeTags.length > 0 ? (
-              <button onClick={resetFilters} className="rounded-full border border-secondary/40 px-4 py-2 text-secondary transition hover:bg-secondary/10 cursor-pointer">
+              <Link href="/articles" className="rounded-full border border-secondary/40 px-4 py-2 text-secondary transition hover:bg-secondary/10 cursor-pointer">
                 پاک کردن فیلترها
-              </button>
+              </Link>
             ) : null}
           </div>
         </div>
@@ -169,51 +175,7 @@ const ArticlesPage: FC = () => {
       <div className="mx-auto max-w-6xl px-4 -mt-10 lg:-mt-14">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
           <aside className="order-1 lg:col-span-1">
-            <div className="rounded-2xl border border-primary/10 bg-white/80 shadow-xl shadow-primary/10 backdrop-blur lg:sticky lg:top-28">
-              <div className="flex items-center justify-between gap-3 border-b border-primary/10 p-5">
-                <div className="flex items-center gap-2 text-primary font-vazir font-bold">
-                  <FiTag className="h-5 w-5" />
-                  <span>فیلتر تگ‌ها</span>
-                </div>
-                {activeTags.length ? (
-                  <button onClick={resetFilters} className="cursor-pointer rounded-full border border-secondary/40 px-3 py-1 text-xs font-vazir text-secondary transition hover:bg-secondary/10">
-                    پاک کردن
-                  </button>
-                ) : null}
-              </div>
-              <div className="flex flex-col gap-4 p-5">
-                <p className="text-xs font-vazir text-foreground/70">تگ‌های دلخواه را فعال کنید تا مقالات مرتبط نمایش داده شود.</p>
-                <div className="flex flex-wrap gap-3">
-                  {tagList.map((tag) => {
-                    const isActive = activeTags.includes(tag);
-                    return (
-                      <button
-                        key={tag}
-                        onClick={() => toggleTag(tag)}
-                        className={`cursor-pointer rounded-full border px-4 py-2 text-sm font-vazir transition w-full ${
-                          isActive
-                            ? "border-primary bg-primary text-primary-foreground shadow-md shadow-primary/30"
-                            : "border-primary/20 bg-primary/5 text-primary hover:border-primary/40 hover:bg-primary/10"
-                        }`}
-                      >
-                        {tag}
-                      </button>
-                    );
-                  })}
-                </div>
-                <div className="flex flex-wrap gap-2 text-xs font-vazir">
-                  {activeTags.length ? (
-                    activeTags.map((tag) => (
-                      <span key={tag} className="rounded-full bg-secondary/15 px-3 py-1 text-secondary">
-                        #{tag}
-                      </span>
-                    ))
-                  ) : (
-                    <span className="rounded-full bg-primary/5 px-3 py-1 text-primary">همه تگ‌ها فعال‌اند</span>
-                  )}
-                </div>
-              </div>
-            </div>
+            <FilterTags tags={tagList} activeTags={activeTags} />
           </aside>
 
           <div className="order-1 lg:order-2 lg:col-span-3 flex flex-col gap-6">
@@ -252,7 +214,7 @@ const ArticlesPage: FC = () => {
                         <span className="rounded-full bg-primary/5 px-2 py-1 text-primary">{article.author}</span>
                       </div>
                       <h3 className="text-lg font-vazir font-extrabold text-primary leading-snug">
-                        <Link className="text-lg font-vazir font-extrabold text-primary leading-snug" href={`article/${article.id}`}>
+                        <Link className="text-lg font-vazir font-extrabold text-primary leading-snug" href={`/articles/${article.id}`}>
                           {article.title}
                         </Link>
                       </h3>
@@ -272,37 +234,7 @@ const ArticlesPage: FC = () => {
               <div className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-10 text-center font-vazir text-primary">هیچ مقاله‌ای با تگ‌های انتخابی یافت نشد.</div>
             )}
 
-            <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-primary/10 bg-white px-4 py-3 shadow-sm">
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={() => goToPage(currentPage - 1)}
-                  disabled={currentPage === 1}
-                  className="cursor-pointer rounded-full border border-primary/20 px-4 py-2 font-vazir text-sm text-primary transition hover:bg-primary/10 disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  قبلی
-                </button>
-                <button
-                  onClick={() => goToPage(currentPage + 1)}
-                  disabled={currentPage === totalPages}
-                  className="cursor-pointer rounded-full border border-primary/20 px-4 py-2 font-vazir text-sm text-primary transition hover:bg-primary/10 disabled:cursor-not-allowed disabled:opacity-40"
-                >
-                  بعدی
-                </button>
-              </div>
-              <div className="flex flex-wrap items-center gap-2">
-                {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
-                  <button
-                    key={pageNumber}
-                    onClick={() => goToPage(pageNumber)}
-                    className={`cursor-pointer rounded-full px-3 py-2 text-sm font-vazir transition ${
-                      currentPage === pageNumber ? "bg-primary text-primary-foreground shadow" : "bg-primary/5 text-primary hover:bg-primary/10"
-                    }`}
-                  >
-                    {toPersianNumber(pageNumber)}
-                  </button>
-                ))}
-              </div>
-            </div>
+            <Pagination currentPage={currentPage} totalPages={totalPages} />
           </div>
         </div>
       </div>

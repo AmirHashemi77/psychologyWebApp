@@ -1,5 +1,15 @@
 import AboutUsSection from "@/component/modules/AboutUs/AboutUsSection";
+import { Metadata } from "next";
 import { FC } from "react";
+
+export const metadata: Metadata = {
+  title: "درباره ما",
+  description:
+    "دکتر مرضیه خمسه یک روان‌درمانگر و روان‌شناس ایرانی و عضو انجمن روانشناسی امریکا (APA) است. ایشان با بیش از ۱۷ سال تجربه در مشاوره و جلسات روان‌تحلیلی، خدمات تخصصی خود را به صورت حضوری و غیرحضوری (آنلاین) به ایرانیان داخل و خارج از کشور ارائه می‌نماید.",
+  alternates: {
+    canonical: "/aboutus",
+  },
+};
 
 const AboutUsPage: FC = () => {
   return (
