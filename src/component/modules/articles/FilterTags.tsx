@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { FiTag } from "react-icons/fi";
 
@@ -13,14 +14,22 @@ const FilterTags = ({ tags, activeTags }: FilterTagsProps) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
+  useEffect(() => {
+    console.log("[Articles] Active tags:", activeTags);
+  }, [activeTags]);
+
   const updateTags = (nextTags: string[]) => {
+    console.log("[Articles] Updating tags:", nextTags);
+
     const params = new URLSearchParams(searchParams.toString());
     params.delete("tag");
     nextTags.forEach((tag) => params.append("tag", tag));
     params.delete("page"); // reset pagination when filters change
 
     const query = params.toString();
-    router.push(query ? `${pathname}?${query}` : pathname);
+    const nextUrl = query ? `${pathname}?${query}` : pathname;
+    console.log("[Articles] Next URL:", nextUrl);
+    router.push(nextUrl);
   };
 
   const toggleTag = (tag: string) => {

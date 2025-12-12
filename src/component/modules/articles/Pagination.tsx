@@ -27,7 +27,12 @@ const Pagination = ({ currentPage, totalPages }: PaginationProps) => {
     }
 
     const query = params.toString();
-    router.push(query ? `${pathname}?${query}` : pathname);
+    const nextUrl = query ? `${pathname}?${query}` : pathname;
+
+    console.log("[Articles] Page change:", nextPage);
+    console.log("[Articles] Next URL:", nextUrl);
+
+    router.push(nextUrl);
 
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" });

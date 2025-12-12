@@ -3,8 +3,9 @@ import Link from "next/link";
 import { FiCalendar, FiFilter } from "react-icons/fi";
 
 import { toPersianNumber } from "@/utils/ToPersionDigits";
-import FilterTags from "./components/FilterTags";
-import Pagination from "./components/Pagination";
+import FilterTags from "../../component/modules/articles/FilterTags";
+import Pagination from "../../component/modules/articles/Pagination";
+import { FC } from "react";
 
 type Article = {
   id: string;
@@ -112,10 +113,7 @@ const articles: Article[] = [
 const pageSize = 6;
 
 type PageProps = {
-  searchParams?: {
-    page?: string;
-    tag?: string | string[];
-  };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 const normalizeTags = (value?: string | string[]): string[] => {
@@ -136,16 +134,16 @@ const parsePageNumber = (value?: string): number => {
   return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : 1;
 };
 
-const ArticlesPage = ({ searchParams }: PageProps) => {
-  const activeTags = normalizeTags(searchParams?.tag);
-  const filteredArticles = activeTags.length
-    ? articles.filter((article) => activeTags.every((tag) => article.tags.includes(tag)))
-    : articles;
+const page: FC<PageProps> = async ({ searchParams }) => {
+  const resolvingSearchParams = await searchParams;
+  const activeTags = normalizeTags(resolvingSearchParams?.tag);
 
-  const totalPages = Math.max(1, Math.ceil(filteredArticles.length / pageSize));
-  const currentPage = Math.min(parsePageNumber(searchParams?.page), totalPages);
-  const start = (currentPage - 1) * pageSize;
-  const visibleArticles = filteredArticles.slice(start, start + pageSize);
+  const totalArticles = articles.length;
+  const totalPages = Math.max(1, Math.ceil(totalArticles / pageSize));
+  const currentPage = Math.min(parsePageNumber(resolvingSearchParams?.page as string), totalPages);
+  const visibleArticles = articles.slice(0, pageSize);
+  const displayStart = totalArticles ? 1 : 0;
+  const displayEnd = Math.min(pageSize, totalArticles);
   const tagList = Array.from(new Set(articles.flatMap((item) => item.tags)));
 
   return (
@@ -181,8 +179,7 @@ const ArticlesPage = ({ searchParams }: PageProps) => {
           <div className="order-1 lg:order-2 lg:col-span-3 flex flex-col gap-6">
             <div className="flex items-center justify-between gap-3 text-sm font-vazir text-foreground/70 p-3 rounded-2xl border border-primary/10 bg-white/80 shadow-xl shadow-primary/10 backdrop-blur ">
               <div>
-                نمایش {toPersianNumber(filteredArticles.length ? start + 1 : 0)} تا {toPersianNumber(Math.min(start + pageSize, filteredArticles.length))} از {toPersianNumber(filteredArticles.length)}{" "}
-                مقاله
+                نمایش {toPersianNumber(displayStart)} تا {toPersianNumber(displayEnd)} از {toPersianNumber(totalArticles)} مقاله
               </div>
               <span className="rounded-full bg-primary/10 px-3 py-1 text-primary">{activeTags.length ? `تگ‌های فعال: ${activeTags.map((tag) => `#${tag}`).join("، ")}` : "بدون فیلتر تگ"}</span>
             </div>
@@ -242,4 +239,4 @@ const ArticlesPage = ({ searchParams }: PageProps) => {
   );
 };
 
-export default ArticlesPage;
+export default page;
