@@ -14,13 +14,7 @@ const FilterTags = ({ tags, activeTags }: FilterTagsProps) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  useEffect(() => {
-    console.log("[Articles] Active tags:", activeTags);
-  }, [activeTags]);
-
   const updateTags = (nextTags: string[]) => {
-    console.log("[Articles] Updating tags:", nextTags);
-
     const params = new URLSearchParams(searchParams.toString());
     params.delete("tag");
     nextTags.forEach((tag) => params.append("tag", tag));
@@ -28,7 +22,6 @@ const FilterTags = ({ tags, activeTags }: FilterTagsProps) => {
 
     const query = params.toString();
     const nextUrl = query ? `${pathname}?${query}` : pathname;
-    console.log("[Articles] Next URL:", nextUrl);
     router.push(nextUrl);
   };
 

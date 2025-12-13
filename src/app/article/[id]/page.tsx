@@ -125,7 +125,6 @@ const ArticleDetails: FC<ArticleDetailsProps> = ({ params }) => {
   const article = sampleArticle;
 
   // استفاده از params.id برای دریافت مقاله مورد نظر
-  console.log("Article ID:", params.id);
 
   return (
     <div className="min-h-screen bg-background py-32 px-4 sm:px-6 lg:px-8">

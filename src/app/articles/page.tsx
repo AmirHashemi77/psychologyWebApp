@@ -6,6 +6,7 @@ import { toPersianNumber } from "@/utils/ToPersionDigits";
 import FilterTags from "../../component/modules/articles/FilterTags";
 import Pagination from "../../component/modules/articles/Pagination";
 import { FC } from "react";
+import { Metadata } from "next";
 
 type Article = {
   id: string;
@@ -133,6 +134,76 @@ const parsePageNumber = (value?: string): number => {
   const parsed = Number(value);
   return Number.isFinite(parsed) && parsed > 0 ? Math.floor(parsed) : 1;
 };
+
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+  // در Next.js 15 باید searchParams را await کنید
+  const sp = await searchParams;
+
+  // استخراج پارامترها
+  const page = Number(sp?.page) || 1;
+  const rawTags = sp?.tag;
+  const activeTags = rawTags ? (Array.isArray(rawTags) ? rawTags : [rawTags]).join("، ") : null;
+
+  // 2. ساخت تایتل هوشمند
+  // مثال خروجی: "مقالات اضطراب و افسردگی - صفحه ۲ | نام برند"
+  let title = "مقالات روانشناسی و سلامت روان";
+  if (activeTags) {
+    title = `مقالات درباره ${activeTags}`;
+  }
+  if (page > 1) {
+    title += ` - صفحه ${toPersianNumber(page)}`;
+  }
+
+  // 3. ساخت توضیحات (Description)
+  const description = activeTags
+    ? `لیست جدیدترین مقالات و مطالب علمی روانشناسی پیرامون موضوعات ${activeTags}. راهکارهای علمی برای بهبود کیفیت زندگی.`
+    : "مرجع کامل مقالات علمی روانشناسی، درمان افسردگی، اضطراب، وسواس و مشاوره خانواده زیر نظر تیم درمان خمسه.";
+
+  // 4. ساخت آدرس کانونیکال (برای جلوگیری از Duplicate Content)
+  // پارامترهای URL را بازسازی می‌کنیم
+  const params = new URLSearchParams();
+  if (sp?.tag) {
+    const tagsArr = Array.isArray(sp.tag) ? sp.tag : [sp.tag];
+    tagsArr.forEach((t) => params.append("tag", t));
+  }
+  if (page > 1) params.set("page", page.toString());
+
+  const queryString = params.toString();
+  const canonicalPath = `/articles${queryString ? `?${queryString}` : ""}`;
+
+  return {
+    title: title,
+    description: description,
+
+    // تنظیمات Open Graph برای اشتراک‌گذاری در سوشال مدیا
+    openGraph: {
+      title: title,
+      description: description,
+      type: "website",
+      url: canonicalPath,
+      images: [
+        {
+          // تصویر پیش‌فرض بخش بلاگ (حتما این فایل را در public قرار دهید)
+          url: "/images/blog-og-cover.jpg",
+          width: 1200,
+          height: 630,
+          alt: "آرشیو مقالات روانشناسی",
+        },
+      ],
+    },
+
+    // آدرس کانونیکال
+    alternates: {
+      canonical: canonicalPath,
+    },
+
+    // ربات‌ها: صفحه اول و تگ‌های اصلی ایندکس شوند
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
+}
 
 const page: FC<PageProps> = async ({ searchParams }) => {
   const resolvingSearchParams = await searchParams;
